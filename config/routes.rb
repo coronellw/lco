@@ -1,5 +1,4 @@
-LCO::Application.routes.draw do
-  #get "static_pages/home"
+LCO::Application.routes.draw do  
   root 'static_pages#home'
 
   match '/help',      to: 'static_pages#help',      via: 'get'  
