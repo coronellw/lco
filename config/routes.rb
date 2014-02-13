@@ -7,13 +7,16 @@ LCO::Application.routes.draw do
 
   match '/signup',    to: 'users#new',              via: 'get'
 
+  match '/signin',    to: 'sessions#new',           via: 'get'
+  match '/signout',   to: 'sessions#destroy',       via: 'delete'
+
   #get "static_pages/help"
   #get "static_pages/about"
   #get "static_pages/contact"
 
   resources :microposts
-
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
