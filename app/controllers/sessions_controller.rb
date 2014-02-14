@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			# success
 			# flash[:success] = "Welcome " + user.name
 			sign_in user
-			redirect_to user
+			redirect_back_or user
 		else
 			flash.now[:error] = "Invalid user or password"
 			render 'new'

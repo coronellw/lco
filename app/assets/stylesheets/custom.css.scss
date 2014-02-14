@@ -3,6 +3,7 @@
 /* mixins, variables, etc */
 
 $basicGray: #999;
+$softGray: #aeaeae;
 
 @mixin box_sizing{
 	-moz-box-sizing: border-box;
@@ -177,7 +178,23 @@ input{
 	@include box-sizing;
 }
 
+/* Users index */
+
+.users {
+	list-style: none;
+	margin: 0;
+	li {
+		overflow: auto;
+		padding: 1px 0;
+		border-top: 1px solid $softGray;
+		&:last-child {
+			border-bottom: 1px solid $softGray;
+		}
+	}
+}
+
 /* Other modifications */
+
 .myHero-unit {
 	padding: 60px;
 	margin-bottom: 30px;
@@ -200,4 +217,8 @@ input{
 	li {
     	line-height: 30px; 
 	}
+}
+
+.to-right {
+	float: right;
 }
