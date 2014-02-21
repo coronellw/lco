@@ -1,0 +1,162 @@
+.sidebar {	
+	border-radius: 5px;
+	left: 0;
+	position: fixed;
+	top: 100px;
+}
+
+.sidebar nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+}
+
+.sidebar nav ul li{	
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.sidebar a, .sidebar a:hover {
+	text-align: center;
+	text-decoration: none;
+}
+
+/* my menu items */
+
+.sidebar-item {
+	border-radius: 0px 0px 45px 0;
+	box-shadow: 0px 10px 1px #888;
+	color: #372811;
+	margin: 4px 0;
+}
+
+.sidebar-item a {
+	color: #372811;
+}
+
+.sidebar-item a:hover {	
+	color: #C2AB75;
+}
+
+/* HTML5 Animation testing */
+
+.slide {
+	background-color: #BE9637;
+	height: 20px;
+	width: 100px;
+	/* size transition */
+	transition: width .5s, background-color 1s;
+	-webkit-transition: width .5s, background-color 1s; /* Safari */
+}
+
+.slide:hover{
+	background-color: #695220;
+	width: 150px;
+}
+
+/* other */
+
+.horizontal-line {
+	border-bottom: 1px solid #372811;
+	margin: 0 auto;
+	padding: 0 ;
+}
+
+.box-container {
+	background: #cfae64;
+	border-radius: 5px;
+	box-shadow: -5px 5px 15px #888;
+	padding: 15px;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #000 !important;
+    color:#fff !important;
+}
+
+/* navbar menubar mod*/
+
+.my-navbar {
+	display: inline-block;
+	float: right;
+	height: 20px;  	
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.top-menubar {
+	margin-right: 20px;
+}
+
+.top-menubar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.top-menubar ul li {
+	border-right: 1px solid #372811;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+.top-menubar ul li:last-child {
+	border-right: none;
+}
+
+.user-info {  	
+	float: right;
+	margin: 10px 10px 0 0;
+}
+
+.user-img, .user-opt {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.user-img a img{
+	margin-left: 28px;
+	text-align: center;  	
+}
+
+.user-opt {
+	height: 20px;
+}
+
+.user-opt nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.user-opt nav ul li {
+	display: inline-block;
+}
+
+/* special images */
+.explanation {
+	margin-top: 10px;
+	text-align: left;
+	
+}
+
+.cases {
+	float: left;
+}
+
+.cases, .explanation {
+	display: inline-block;
+	float: left;
+}
+
+.case img {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.case {
+	background: #685220;
+	display: inline-block;
+	height: 80px;
+	margin: 8px;
+	width: 80px;
+}

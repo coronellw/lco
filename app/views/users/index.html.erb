@@ -1,0 +1,18 @@
+<% provide(:title, 'All user')  %>
+<h1>Listing users</h1>
+
+<div class="box-container">
+	<div>
+		<div style="text-align: center;">
+			<%= will_paginate @users, :renderer => WillPaginate::ActionView::LinkRenderer %>
+		</div>
+
+		  <ul class="users">
+		    <%= render @users %>
+		  </ul>
+
+		<div style="text-align: center;">
+			<%= will_paginate @users, :renderer => WillPaginate::ActionView::LinkRenderer %>
+		</div>
+	</div>
+</div>

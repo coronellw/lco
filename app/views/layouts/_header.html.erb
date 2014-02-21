@@ -1,0 +1,55 @@
+<header class="container">
+	<div class="row">
+		<div id="logo" class="col-xs-5">
+			<%= link_to image_tag("LAO-Logo.jpg", alt: "LCO", size: "365x150"), root_path, id: "logo" %>
+		</div>
+
+		<% if !signed_in? %>
+			<div class="col-md-2 col-xs-2 pull-right" style="margin-right: 10px;">
+				<%= form_for(:session, url: sessions_path) do |f| %>
+					<h4>Member sign in</h4>					
+					<%= f.text_field :email, class: "form-control pull-right ", size: 50, placeholder: "username" %>
+
+					<%= f.password_field :password, class: "form-control pull-right ", size: 50, placeholder: "password" %>
+
+					<span class=" col-md-7 pull-left text" >New user? <%= link_to "Sign up now!", signup_path %></span>
+					<%= f.submit "Log in", class: "btn btn-large btn-primary col-md-4" %>
+						<span class="glyphicon glypicon-cog"> </span>
+				<% end %>
+			</div>
+		<% else %>
+			<div class="user-info span2">
+				<div class="user-img span2">
+					<%= link_to (gravatar_for current_user), current_user %>
+				</div>
+
+				<div class="user-opt span2">
+					<nav>
+						<ul>
+							<li>
+								<span class="glyphicon glyphicon-cog"> </span>
+								<%= link_to "Settings", edit_user_path(current_user) %>
+							</li>
+							<li>
+								<span class="glyphicon glyphicon-log-out"></span>
+								<%= link_to "Sign out", signout_path, method: "delete" %>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		<% end %>
+		<span class="clearfix"></span>
+		<div class="my-navbar col-md-12">
+			<nav class="top-menubar" role="navigation">
+				<ul>					
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Help", help_path %></li>
+					<% if signed_in? %>
+						<li><%= link_to "Users", users_path %></li>
+					<% end %>
+				</ul>
+			</nav>	
+		</div>
+	</div>
+</header>

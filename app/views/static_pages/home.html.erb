@@ -1,0 +1,68 @@
+<% provide(:title, 'Home') %>
+
+<h1>Welcome to Legal Consulting Online</h1>
+
+<div class="col-xs-5 box-container">
+	<h3 style="font-style: italic;">Greetings, what can we help you with today?</h3>
+	<div class="text-container">
+		<span class="text">
+			Enter your question here and please enter ONLY your question.
+		</span>
+		<span class="text">
+			Don't worry, there will be room to add more details later!
+		</span>
+	</div>
+	<form role="form">
+		<div class="form-group">
+			<textarea rows="10" class="form-control" style="display: inline-block;" placeholder="Type your question here."></textarea>
+		</div>
+	</form>
+	
+	<button class="btn btn-primary pull-right">Ask a Professional</button>
+</div>
+
+<div class="col-xs-6 col-xs-offset-1 box-container">
+	<h3>What does <em>Legal Consulting Online&#8482;</em> do?</h3>
+	<div class="explanation col-xs-6 ">
+		Many confusing legal questions can arise when you are faced with legal problems. it's important to have a lawyer help you translate legalese and understand legal issues. Legal Consulting Online offers fast answers online to any legal question about US or international law. Whether you are starting a business, facing a divorce, dealing with immigration, or any other legal issue, you may be in need of legal help. Let a real lawyer help you - ask lawyer online now.
+	</div>
+	<div class="cases col-xs-6">
+		<div class="case" id="michael" title="Es un cuadro de dialogo cualquiera">
+			<span class="image">
+				<%= link_to image_tag("michael.png", alt: "Michael", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Michael</span>
+		</div>
+		
+		<div class="case">
+			<span class="image">
+				<%= link_to image_tag("winston.png", alt: "Winston", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Winston</span>
+		</div>
+		<div class="case">
+			<span class="image">
+				<%= link_to image_tag("marriage.png", alt: "Marriage", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Marriage</span>
+		</div>
+		<div class="case">
+			<span class="image">
+				<%= link_to image_tag("criminal.png", alt: "Criminal", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Criminal</span>
+		</div>
+		<div class="case">
+			<span class="image">
+				<%= link_to image_tag("immigration.png", alt: "Immigration", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Immigration</span>
+		</div>
+		<div class="case">
+			<span class="image">
+				<%= link_to image_tag("taxes.png", alt: "Taxes", size: "80x80"), "#" %>
+			</span>
+			<span class="title">Taxes</span>
+		</div>
+	</div>
+</div>

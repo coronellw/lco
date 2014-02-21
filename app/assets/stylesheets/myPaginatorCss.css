@@ -1,0 +1,71 @@
+.pagination {
+  background: #BE9637;
+  cursor: default;
+  margin: 10px 0;
+  /* self-clearing method: */ 
+}
+
+.pagination a, .pagination span, .pagination em {
+	border-radius: 3px;
+	display: block;
+	float: left;
+	margin-right: 1px; 
+	padding: 0.2em 0.5em;
+}
+
+.pagination .disabled {
+	color: #633;
+	border: 1px solid #dddddd; 
+}
+
+.pagination .current {
+	font-style: normal;
+	font-weight: bold;
+	background: url("../assets/ricepaper.png") !important;
+	color: #BE9637;
+	border: 1px solid #372811; 
+}
+
+.pagination a {
+	text-decoration: none;
+	color: white;
+	border: 1px solid white; 
+}
+
+.pagination a:hover {
+	background: white;
+	color: #BE9637 !important;
+	border: 1px solid #BE9637 !important;
+	text-decoration: none;
+}
+
+.pagination a:hover, .pagination a:focus {
+	color: #000033;
+	border-color: #000033; 
+}
+.pagination .page_info {
+	background: #2e6ab1;
+	color: white;
+	padding: 0.4em 0.6em;
+	width: 22em;
+	margin-bottom: 0.3em;
+	text-align: center; 
+}
+.pagination .page_info b {
+	color: #000033;
+	background: #6aa6ed;
+	padding: 0.1em 0.25em; 
+}
+.pagination:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden; 
+}
+* html .pagination {
+	height: 1%; 
+}
+*:first-child + html .pagination {
+	overflow: hidden; 
+}

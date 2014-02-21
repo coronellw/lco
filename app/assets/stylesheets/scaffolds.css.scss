@@ -1,0 +1,58 @@
+$brownColor: #685220;
+$blueColor: #2B455E;
+
+.box {
+	display: inline-block;
+	height: 300px;
+	width: 300px;
+}
+
+.color1 {
+	background: $brownColor;
+}
+
+.color2 {
+	background: lighten($brownColor, 13.5%);
+	/* background: #BE9637; */
+}
+
+.color3 {
+	background: lighten($brownColor, 20%);
+}
+
+.color4 {
+	background: lighten($brownColor, 33.5%);
+}
+
+.color5 {
+	background: lighten($brownColor, 60%);
+}
+
+.color6 {
+	background: lighten($brownColor, 65%);
+}
+/* blue scale */
+.color7 {
+	background: $blueColor;
+}
+
+.color8 {
+	background: lighten($blueColor, 13.5%);
+	/* background: #BE9637; */
+}
+
+.color9 {
+	background: lighten($blueColor, 20%);
+}
+
+.color10 {
+	background: lighten($blueColor, 33.5%);
+}
+
+.color11 {
+	background: lighten($blueColor, 60%);
+}
+
+.color12 {
+	background: lighten($blueColor, 65%);
+}
