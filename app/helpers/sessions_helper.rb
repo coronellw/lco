@@ -39,6 +39,6 @@ module SessionsHelper
 			session[:return_to] = request.url if request.get
 		rescue Exception => e
 			session[:return_to] = nil
-		end		
+		end
 	end
 end
