@@ -23,7 +23,9 @@ end
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
-gem 'jquery-rails', '3.0.4'
+gem 'rails-asset-jqueryui'
+gem 'jquery-rails'
+gem "jquery-ui-rails"
 gem 'turbolinks'
 gem 'jbuilder', '1.0.2'
 

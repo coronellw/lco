@@ -1,9 +1,5 @@
 /* Custom javascript */
 $(function(){
-	$("#michael").tooltip({
-		show:{
-			effect: "explode",
-			delay: 500
-		}
-	});
+	$("#michael").tooltip();
+	$("#winston").tooltip();
 });
