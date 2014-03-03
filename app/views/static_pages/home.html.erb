@@ -12,13 +12,7 @@
 			Don't worry, there will be room to add more details later!
 		</span>
 	</div>
-	<form role="form">
-		<div class="form-group">
-			<textarea rows="10" class="form-control" style="display: inline-block;" placeholder="Type your question here."></textarea>
-		</div>
-	</form>
-	
-	<button class="btn btn-primary pull-right">Ask a Professional</button>
+	<%= render 'shared/micropost_form', micropost: default_user.microposts.build %>
 </div>
 
 <div class="col-xs-6 col-xs-offset-1 box-container">

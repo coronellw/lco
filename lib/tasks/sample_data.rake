@@ -8,5 +8,12 @@ namespace :db do
 			password = "password"
 			User.create!(name: name, email: email, password: password, password_confirmation: password, admin: false)
 		end
+
+		#Creating some post for show up!
+		usuarios = User.all(limit: 6)
+		50.times do
+			content = Faker::Lorem.sentence(5)
+			usuarios.each { |user| user.microposts.create!(content: content) }
+		end
 	end
 end

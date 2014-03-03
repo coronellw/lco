@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.tooltip
-//= require jquery.ui.effect.all
 //= require bootstrap
 //= require turbolinks
 //= require_tree .

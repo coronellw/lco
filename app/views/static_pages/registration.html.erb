@@ -1,0 +1,87 @@
+<%= provide(:title, "Registration") %>
+<h1>
+	A couple of steps more...
+</h1>
+
+<div class="box-container col-xs-12">
+<!-- nav-tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#first" data-toggle="tab">Tell us more</a></li>
+		<li><a href="#second" data-toggle="tab">Select your budget</a></li>
+		<li><a href="#third" data-toggle="tab">Almost there</a></li>
+		<li><a href="#fourth" data-toggle="tab">Register</a></li>
+	</ul>
+<!-- Tab panes -->
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="first">
+			<div class="col-xs-6 col-xs-offset-3">
+				In order to answer your question we need to have some way to contact you back, also in order to keep your information private, please register on our website for <em>free</em>. Just provide us with an email a password and your name, that all we need so far.
+			</div>
+			<div class="col-xs-4 col-xs-offset-4">
+				<%= form_for @user do |f| %>
+					
+					<%= render 'shared/error_messages', object: f.object %>
+
+					<div class="field">
+						<%= f.label :name %>
+						<%= f.text_field :name %>
+					</div>
+
+					<div class="field">
+						<%= f.label :email %>
+						<%= f.email_field :email %>
+					</div>
+
+					<div class="field">
+						<%= f.label "Priority" %>
+						<%= f.range_field :id, min: 0, max:100, id: "slider", update: "value" %>
+						<div id="value"><%= params[:id] %></div>
+					</div>
+
+					<div class="field">
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+					</div>
+
+					<div class="field">
+						<%= f.label :password_confirmation %>
+						<%= f.password_field :password_confirmation %>
+					</div>
+
+					<div class="field">
+						<%= f.label "Your question is" %>
+						<%= f.fields_for :micropost, @user.microposts.first do |m| %>
+							<%= m.text_area :content, rows: 10 %>
+						<% end %>
+					</div>
+
+					<%= f.submit "Create account", class: "btn btn-primary" %>
+				<% end %>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="second">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<div class="tab-pane fade" id="third">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<div class="tab-pane fade" id="fourth">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
+</div>

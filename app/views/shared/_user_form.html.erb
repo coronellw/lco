@@ -1,0 +1,19 @@
+<%= form_for @user do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<div class="field">
+			<%= f.label :name %>
+			<%= f.text_field :name, placeholder: "Name" %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "e-mail" %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, placeholder: "Password" %>
+
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation, placeholder: "Verify your password" %>
+
+			<%= f.submit btn_lbl, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>

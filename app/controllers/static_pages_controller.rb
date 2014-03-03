@@ -13,4 +13,10 @@ class StaticPagesController < ApplicationController
 
   def demo
   end
+
+  def registration
+    @user = default_user
+    @micropost = Micropost.new(session[:micropost_params])
+    @user.microposts << @micropost
+  end
 end

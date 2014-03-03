@@ -10,6 +10,14 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	def signed_in_user
+      if !signed_in?
+        store_location
+        flash[:notice] = "Please sign in to perform this action." 
+        redirect_to signin_url
+      end
+    end
+
 	def current_user=(user)
 		@current_user = user
 	end
@@ -27,6 +35,18 @@ module SessionsHelper
 
 	def current_user?(user)
 		user == current_user
+	end
+
+	def default_user
+		if default_in_memory?
+			@default_user
+		else
+			@default_user = User.new
+		end
+	end
+
+	def default_in_memory?
+		!@default_user.nil?
 	end
 
 	def redirect_back_or(default)

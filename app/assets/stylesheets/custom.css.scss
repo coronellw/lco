@@ -191,6 +191,7 @@ aside{
 
 input, textarea, select, .uneditable-input{
 	border: 1px solid #bbb;
+	color: $darkestBrown;
 	width: 100%;
 	margin-bottom: 15px;
 	@include box_sizing;
@@ -211,6 +212,25 @@ input{
 .field_with_errors {
 	@extend .control-group;
 	@extend .error;
+}
+
+/* questions */
+
+.microposts {
+	list-style: none;
+	margin: 10px 0 0 0;
+	li {
+		border-top: 1px solid #e8e8e8;
+		padding: 5px 0;
+	}
+}
+
+.content {
+	display: block;
+}
+
+.timestamp {
+	color: $lightGray;
 }
 
 /* miscellaneous */
@@ -270,8 +290,4 @@ a:hover {
 	li {
     	line-height: 30px; 
 	}
-}
-
-.to-right {
-	float: right;
 }

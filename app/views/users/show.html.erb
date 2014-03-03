@@ -1,13 +1,41 @@
 <% provide(:title, @user.name) %>
 <div class="row">
 	<h1>User information</h1>
-	<aside class="col-xs-4 col-xs-offset-4 box-container">
+	<aside class="col-xs-4 box-container">
 		<section>
 			<h1>
 				<%= gravatar_for @user %>
 				<%= @user.name %>
 			</h1>
+			<%= @user.email %>
 		</section>
-		<%= @user.email %>
 	</aside>
+
+	<div class="col-xs-7 col-xs-offset-1 box-container">
+
+		<% if @user.microposts.any? %>
+			<h3>Total questions (<%= @user.microposts.count %>)</h3>
+			<div style="text-align: center;">
+				<%= will_paginate @microposts, :renderer => WillPaginate::ActionView::LinkRenderer %>
+			</div>
+
+				<ol class="microposts" >
+					<%= render @microposts %>
+				</ol>
+
+			<div style="text-align: center;">
+				<%= will_paginate @microposts, :renderer => WillPaginate::ActionView::LinkRenderer %>
+			</div>
+		<% else %>
+			<h3>You haven't ask anything</h3>
+			would you like to ask now?
+			<form role="form">
+				<div class="form-group">
+					<textarea rows="10" class="form-control" style="display: inline-block;" placeholder="Type your question here."></textarea>
+				</div>
+			</form>
+			
+			<button class="btn btn-primary pull-right">Ask a Professional</button>
+		<% end %>
+	</div>
 </div>

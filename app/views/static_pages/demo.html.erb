@@ -1,6 +1,6 @@
 <% provide(:title, 'Demo') %>
 
-<div class="box-container">
+<div class="box-container row">
 	<div class="box color1"></div>
 	<div class="box color2"></div>
 	<div class="box color3"></div>
@@ -14,4 +14,18 @@
 	<div class="box color10"></div>
 	<div class="box color11"></div>
 	<div class="box color12"></div>
+	<div class="col-xs-12">
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			Launch demo
+		</button>
+
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myTest">
+			Launch Test
+		</button>
+	</div>
 </div>
+
+<!-- Modal window -->
+<%= render 'shared/modal_message_info', tag_id: "myModal", titulo: "Custom message!", contenido: "Hello, we're currently working in this website so you can have our assistance, sorry for our inconvenience." %>
+
+<%= render 'shared/modal_message_info', tag_id: "myTest", titulo: "Testing this", contenido: "Hello world! I am just testing the site functionality!!!" %>

@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :destroy, :index]
 
   # GET /microposts
   # GET /microposts.json
@@ -24,15 +25,18 @@ class MicropostsController < ApplicationController
   # POST /microposts
   # POST /microposts.json
   def create
-    @micropost = Micropost.new(micropost_params)
+    if !signed_in?
+      session[:micropost_params] = micropost_params
+      return redirect_to register_path
+    end
+    @micropost = current_user.microposts.build(micropost_params)
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
+        format.html { redirect_to @micropost.user, notice: 'Micropost was successfully created.' }
         format.json { render action: 'show', status: :created, location: @micropost }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @micropost.errors, status: :unprocessable_entity }
+        redirect_to root_path
       end
     end
   end
@@ -69,6 +73,6 @@ class MicropostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
+      params.require(:micropost).permit(:content)
     end
 end
